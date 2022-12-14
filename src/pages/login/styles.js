@@ -49,7 +49,7 @@ export const TitleLogin = styled.p`
     line-height: 44px;
 `
 
-export const Subtitlelogin = styled.p`
+export const SubtitleLogin = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;

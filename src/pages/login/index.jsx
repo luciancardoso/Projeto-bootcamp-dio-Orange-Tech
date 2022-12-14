@@ -1,5 +1,5 @@
 import { useNavigate  } from "react-router-dom";
-import { MdEmail, MdLock } from 'react-icons/md';
+// import { MdEmail, MdLock } from 'react-icons/md';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
@@ -35,6 +35,10 @@ const Login = () => {
 
     console.log('errors', errors);
 
+    const handleClickSignIn = () => {
+        navigate('/feed')
+    }
+
     return (<>
         <Header />
         <Container>
@@ -47,11 +51,11 @@ const Login = () => {
                 <TitleLogin>Faça seu cadastro</TitleLogin>
                 <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <Input placeholder="E-mail" leftIcon={<MdEmail />} name="email"  control={control} />
+                    <Input placeholder="E-mail"  name="email"  control={control} />
                     {errors.email && <span>E-mail é obrigatório</span>}
-                    <Input type="password" placeholder="Senha" leftIcon={<MdLock />}  name="senha" control={control} />
+                    <Input type="password" placeholder="Senha"   name="password" control={control} />
                     {errors.senha && <span>Senha é obrigatório</span>}
-                    <Button title="Entrar" variant="secondary" type="submit"/>
+                    <Button title="Entrar" variant="secondary" onClick={handleClickSignIn} type="submit"/>
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
